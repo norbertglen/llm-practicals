@@ -6,9 +6,11 @@
   "license": "MIT",
   "dependencies": {
     "@langchain/community": "^0.2.25",
+    "@langchain/core": "^0.2.27",
     "@langchain/openai": "^0.2.6",
+    "cheerio": "^1.0.0",
     "dotenv": "^16.4.5",
-    "langchain": "^0.2.15",
+    "langchain": "^0.2.16",
     "mysql2": "^3.11.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20",
