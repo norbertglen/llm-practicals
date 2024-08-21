@@ -18,7 +18,7 @@ import {
 (async () => {
     env.config()
 
-    const loader = new CheerioWebBaseLoader("https://kenyalaw.org/caselaw/cases/advanced_search_courts?court=190000")
+    const loader = new CheerioWebBaseLoader("https://lilianweng.github.io/posts/2023-06-23-agent/")
     const docs = await loader.load();
 
     const textSplitter = new RecursiveCharacterTextSplitter({
