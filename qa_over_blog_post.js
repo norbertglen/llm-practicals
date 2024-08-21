@@ -3,17 +3,8 @@ import { CheerioWebBaseLoader } from "@langchain/community/document_loaders/web/
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings, ChatOpenAI } from "@langchain/openai";
-import { pull } from "langchain/hub";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { StringOutputParser } from "@langchain/core/output_parsers";
 import env from 'dotenv';
-import { formatDocumentsAsString } from "langchain/util/document";
-import {
-    RunnableSequence,
-    RunnablePassthrough,
-} from "@langchain/core/runnables";
-
-
 
 (async () => {
     env.config()
@@ -37,8 +28,9 @@ import {
     Question: {question}
     Context: {context}
     Answer:`);
-    
+
     const prompt = await template.format({ question: "What is task decomposition?", context: retrievedDocs });
-    const result = await llm.invoke(prompt);
-    console.log(result.content);
+    const result = await llm.invoke(prompt); 
+    
+    console.log(result?.content);
 })();
